@@ -9,6 +9,7 @@ body {
   flex-direction: column;
   height: 100vh;
   background-color: #3c3c3c;
+  font-family: sans-serif;
 }
 
 .header {
@@ -39,9 +40,16 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.calculator-display {
+.display {
   height: 75px;
   background-color: rgb(111, 145, 111);
+  font-size: 1.6rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-right: 10px;
+  padding-bottom: 5px;
 }
 
 .button-container {
