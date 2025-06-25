@@ -50,6 +50,22 @@ body {
   align-items: flex-end;
   padding-right: 10px;
   padding-bottom: 5px;
+  overflow: hidden;
+}
+
+.display-content {
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  text-overflow: clip;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE */
+  max-width: 100%; /* constrain inside parent */
+}
+
+.display-content::-webkit-scrollbar {
+  width: 0; /* Chrome/Safari */
+  height: 0;
 }
 
 .button-container {

@@ -1,5 +1,5 @@
 const buttons = document.querySelector('.button-container');
-const display = document.querySelector('.display');
+const display = document.querySelector('.display-content');
 
 let num1 = '';
 let num2 = '';
@@ -119,8 +119,8 @@ function handleInput(value) {
 buttons.addEventListener('click', (e) => {
   if (e.target.tagName !== 'BUTTON') return;
 
-  const value = e.target.textContent;
-  handleInput(e.target.textContent);
+  value = e.target.textContent;
+  handleInput(value);
 });
 
 function removeLastValue() {
@@ -130,6 +130,7 @@ function removeLastValue() {
 function updateDisplay(value) {
   displayValue += value;
   display.textContent = displayValue;
+  display.scrollLeft = display.scrollWidth;
 }
 
 function resetCalculator() {
