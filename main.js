@@ -67,12 +67,14 @@ function handleInput(value) {
         // restore num1 into displayValue so it can be reused
         displayValue = num1;
         display.textContent = displayValue;
+        display.scrollLeft = display.scrollWidth;
         return;
       }
 
       // Otherwise, delete last digit from displayValue
       displayValue = displayValue.slice(0, -1);
       display.textContent = displayValue;
+      display.scrollLeft = display.scrollWidth;
 
       // Reflect the change in num1 or num2
       if (!isSecondNumber) {
@@ -97,6 +99,7 @@ function handleInput(value) {
       isSecondNumber = true;
       displayValue = '';
       display.textContent = `${num1} ${operator}`;
+      display.scrollLeft = display.scrollWidth;
       break;
 
     case '=':
@@ -104,6 +107,7 @@ function handleInput(value) {
         num2 = displayValue;
         result = operate(operator, Number(num1), Number(num2));
         display.textContent = result;
+        display.scrollLeft = display.scrollWidth;
         displayValue = '';
         num1 = result.toString(); // allow chaining
         operator = '';
